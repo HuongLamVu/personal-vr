@@ -95,12 +95,12 @@ export default class Hello360 extends React.Component {
       this.state.data.firstPhotoRotation + ((photoData && photoData.rotationOffset) || 0);
     const isLoading = this.state.nextLocationId !== this.state.locationId;
     const soundEffects = this.state.data.soundEffects;
-
+    console.log(photoData);
     return (
       <AnimatedView style={{
         transform: [{rotateY: this.state.rotation}],
       }}>
-        <Pano source={asset('the-chester--v112355.prefilter.jpg')}/>
+        <Pano source={asset((photoData && photoData.uri) || 'the-chester--v112351.prefilter.jpg')}/>
         <Image
           // Place pano in world, and by using position absolute it does not
           // contribute to the layout of other views.
