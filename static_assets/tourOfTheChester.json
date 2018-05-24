@@ -74,7 +74,8 @@
                "source": "old-fashioned.jpg",
                "text": "Bar open until midnight M-F and 2:00 a.m. weekends.",
                "attribution": "Photo by Will Shenton",
-               "attributionUri": "https://commons.wikimedia.org/wiki/File:The_Young_Laddie_Cocktail.jpg"
+               "attributionUri": "https://commons.wikimedia.org/wiki/File:The_Young_Laddie_Cocktail.jpg",
+               "linkedPhotoId":"112379"
             },
             {
                "type": "textblock",
@@ -83,7 +84,8 @@
                "attribution": "360 Photos courtesy of Oyster.com, text from TheChester.com",
                "rotationY": 0,
                "width": 1.5,
-               "height": 1.5
+               "height": 1.5,
+               "linkedPhotoId":"112379"
             }
          ]
       },
@@ -114,7 +116,9 @@
                "source":"beer-cheers.jpg",
                "text": "The Chester Biergarten is ideal for group dining and social gatherings. Enjoy casual picnic-table seating and views of the historic Meatpacking District.",
                "attribution": "Photo by yutacar on upslash",
-               "attributionUri": "https://unsplash.com/photos/JKMnm3CIncw"
+               "attributionUri": "https://unsplash.com/photos/JKMnm3CIncw",
+               "linkedPhotoId":"112379"
+               
             }
          ]
       },
@@ -158,7 +162,8 @@
                "height": 1.388,
                "source":"chalkboard-menu.jpg",
                "attribution": "Photo by currystrumpet on flickr",
-               "attributionUri": "https://www.flickr.com/photos/currystrumpet/7895715748"
+               "attributionUri": "https://www.flickr.com/photos/currystrumpet/7895715748",
+               "linkedPhotoId":"112379"
             }
          ]
       },
@@ -176,7 +181,8 @@
                "text": "Cosy athmosphere with fine leather seats. Relax with friends and select from a wide range of German beers. The late-night bites menu includes pretzels, hot wings, and sliders.",
                "rotationY": 100.42,
                "width": 1.0,
-               "height": 1.0
+               "height": 1.0,
+               "linkedPhotoId":"112379"
             }
          ]
       },

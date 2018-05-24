@@ -61,9 +61,13 @@ class InfoButton extends React.Component {
     }).start();
   }
 
+  gotoIndex = (id) => {
+    this.props.gotoIndex(id);
+  }
+
   render() {
     const PPM = this.props.pixelsPerMeter;
-
+    console.log(this.props);
     return (
       <VrButton
         style={{
@@ -75,7 +79,7 @@ class InfoButton extends React.Component {
             {translateZ: this.props.translateZ},
           ],
         }}
-        onClick={() => this.props.gotoIndex(this.props.linkedPhotoId)}
+        onClick={() => this.gotoIndex(this.props.linkedPhotoId)}
         onInput={this.props.onInput}
         onExit={() => {
           this._fadeOut();

@@ -33,6 +33,7 @@ const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
  * that move between tour locations and info buttons that display tooltips with
  * text and/or images. Tooltip data and photo URLs are read from a JSON file.
  */
+
 export default  class Hello360 extends React.Component {
   static defaultProps = {
     tourSource: 'tourOfTheChester.json',
@@ -71,13 +72,14 @@ export default  class Hello360 extends React.Component {
     });
   }
   gotoIndex(newId) {
-    console.log(newId);
+    console.log(newId, this.state);
     var data = this.state.data.photos[newId] || null;
     data.uri && Environment.setBackgroundImage(asset(data.uri));
     this.setState({
       locationId: newId,
     })
   }
+
   render() {
     if (!this.state.data) {
       return null;
@@ -141,7 +143,7 @@ export default  class Hello360 extends React.Component {
                           tooltip={tooltip}
                           translateX={degreesToPixels(tooltip.rotationY)}
                           linkedPhotoId = {tooltip.linkedPhotoId}
-                          gotoIndex = {(newIndex) => this.gotoIndex(newIndex)}
+                          gotoIndex = {(index) => this.gotoIndex(index)}
                         />
                       );
                     }
