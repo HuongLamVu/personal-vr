@@ -100,9 +100,9 @@ class NavButton extends React.Component {
           layoutOrigin: [0.5, 0.5],
           position: 'absolute',
           transform: [
-            {rotateY: this.props.rotateY},
-            {translateX: this.props.translateX},
-            {translateZ: this.props.translateZ},
+            // {rotateY: 400 this.props.rotateY},
+            {translateX: 350 || this.props.translateX},
+            {translateZ: 400 || this.props.translateZ},
           ],
         }}
         ignoreLongClick={true}

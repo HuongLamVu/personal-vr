@@ -95,7 +95,7 @@ export default class Hello360 extends React.Component {
       this.state.data.firstPhotoRotation + ((photoData && photoData.rotationOffset) || 0);
     const isLoading = this.state.nextLocationId !== this.state.locationId;
     const soundEffects = this.state.data.soundEffects;
-    console.log(photoData);
+    console.log(locationId);
     return (
       <AnimatedView style={{
         transform: [{rotateY: this.state.rotation}],
@@ -129,8 +129,6 @@ export default class Hello360 extends React.Component {
               // View covering the cyldiner. Center so contents appear in middle of cylinder.
               alignItems: 'center',
               justifyContent: 'center',
-              width: MAX_TEXTURE_WIDTH,
-              height: MAX_TEXTURE_HEIGHT,
             }}>
             {/* Need container view, else using absolute position on buttons removes them from cylinder */}
             <View>
@@ -158,7 +156,7 @@ export default class Hello360 extends React.Component {
                       isLoading={isLoading}
                       onClickSound={asset(soundEffects.navButton.onClick.uri)}
                       onEnterSound={asset(soundEffects.navButton.onEnter.uri)}
-                      onInput={() => this.goToIndex(tooltip.linkedPhotoId)}
+                      onInput={() => this.gotoIndex(tooltip.linkedPhotoId)}
                       pixelsPerMeter={PPM}
                       source={asset(this.state.data.nav_icon)}
                       textLabel={tooltip.text}
@@ -166,14 +164,7 @@ export default class Hello360 extends React.Component {
                     />
                   );
                 })}
-              {locationId == null &&
-                // Show a spinner while first pano is loading.
-                <LoadingSpinner
-                  style={{layoutOrigin: [0.5, 0.5]}}
-                  pixelsPerMeter={PPM}
-                  // Undo the rotation so spinner is centered
-                  translateX={degreesToPixels(rotation) * -1}
-                />}
+
             </View>
           </View>
         </View>

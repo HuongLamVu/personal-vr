@@ -48,6 +48,7 @@ class InfoButton extends React.Component {
   }
 
   _fadeIn() {
+    console.log(this.props.fadeIn);
     Animated.timing(this.state.opacityAnim, {
       toValue: 1,
       duration: this.props.fadeIn,
@@ -67,22 +68,23 @@ class InfoButton extends React.Component {
 
   render() {
     const PPM = this.props.pixelsPerMeter;
-    console.log(this.props);
     return (
       <VrButton
         style={{
           layoutOrigin: [0.5, 0.5, 0],
           position: 'absolute',
           transform: [
-            {rotateY: this.props.rotateY},
-            {translateX: 100 || this.props.translateX},
-            {translateZ: 100 || this.props.translateZ},
+            {translateX: 500 || this.props.translateX},
+            {translateZ: -500 || this.props.translateZ},
           ],
         }}
         onClick={() => this.gotoIndex(this.props.linkedPhotoId)}
         onInput={this.props.onInput}
         onExit={() => {
           this._fadeOut();
+        }}
+        onEnter={() => {
+          this._fadeIn();
         }}>
         <Image
           style={{

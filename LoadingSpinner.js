@@ -34,7 +34,7 @@ class LoadingSpinner extends React.Component {
     pixelsPerMeter: 1,
     rotateY: 0,
     source: asset('circle_ramp.png'),
-    speed: 1500,
+    speed: 1000,
     translateX: 0,
     translateZ: 0,
     width: 0.5,
