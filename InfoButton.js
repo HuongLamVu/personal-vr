@@ -75,8 +75,8 @@ class InfoButton extends React.Component {
           position: 'absolute',
           transform: [
             {rotateY: this.props.rotateY},
-            {translateX: this.props.translateX},
-            {translateZ: this.props.translateZ},
+            {translateX: 100 || this.props.translateX},
+            {translateZ: 100 || this.props.translateZ},
           ],
         }}
         onClick={() => this.gotoIndex(this.props.linkedPhotoId)}
