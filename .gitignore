@@ -2,5 +2,7 @@
 *~
 *.log
 *.js.meta
+*.xml
+*.iml
 node_modules/
 build/
