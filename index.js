@@ -50,7 +50,6 @@ export default class Hello360 extends React.Component {
       .then(response => response.json())
       .then(responseData => {
         this.init(responseData);
-
       })
       .done();
   }
@@ -60,10 +59,10 @@ export default class Hello360 extends React.Component {
    */
   _rotateOnce() {
     this.state.rotation.setValue(0);
-    Animated.timing(this.state.rotation, {
-      toValue: this._rotateTo,
-      duration: 80000,
-    }).start(() => this._rotateOnce());
+    // Animated.timing(this.state.rotation, {
+    //   toValue: this._rotateTo,
+    //   duration: 80000,
+    // }).start(() => this._rotateOnce());
     this._rotateTo = -this._rotateTo;
   }
 
@@ -78,9 +77,12 @@ export default class Hello360 extends React.Component {
   }
 
   gotoIndex(newId) {
+
     var data = this.state.data.photos[newId] || null;
+
     data && this.setState({
       locationId: newId,
+      nextLocationId: newId,
     })
   }
 
@@ -95,7 +97,6 @@ export default class Hello360 extends React.Component {
       this.state.data.firstPhotoRotation + ((photoData && photoData.rotationOffset) || 0);
     const isLoading = this.state.nextLocationId !== this.state.locationId;
     const soundEffects = this.state.data.soundEffects;
-    console.log(locationId);
     return (
       <AnimatedView style={{
         transform: [{rotateY: this.state.rotation}],
@@ -156,7 +157,8 @@ export default class Hello360 extends React.Component {
                       isLoading={isLoading}
                       onClickSound={asset(soundEffects.navButton.onClick.uri)}
                       onEnterSound={asset(soundEffects.navButton.onEnter.uri)}
-                      onInput={() => this.gotoIndex(tooltip.linkedPhotoId)}
+                      linkedPhotoId = {tooltip.linkedPhotoId}
+                      gotoIndex = {(newIndex) => this.gotoIndex(newIndex)}
                       pixelsPerMeter={PPM}
                       source={asset(this.state.data.nav_icon)}
                       textLabel={tooltip.text}

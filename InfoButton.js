@@ -26,6 +26,9 @@ import Tooltip from './Tooltip';
  * When using with CylinderLayer, set pixelsPerMeter to convert units, otherise
  * set translateZ to specify distance between camera and button. 
  */
+const phi=45;
+const theta =15;
+
 class InfoButton extends React.Component {
   static defaultProps = {
     fadeIn: 500,
@@ -48,7 +51,6 @@ class InfoButton extends React.Component {
   }
 
   _fadeIn() {
-    console.log(this.props.fadeIn);
     Animated.timing(this.state.opacityAnim, {
       toValue: 1,
       duration: this.props.fadeIn,
@@ -68,14 +70,16 @@ class InfoButton extends React.Component {
 
   render() {
     const PPM = this.props.pixelsPerMeter;
+    const tooltip = this.props.tooltip;
     return (
       <VrButton
         style={{
           layoutOrigin: [0.5, 0.5, 0],
           position: 'absolute',
           transform: [
-            {translateX: 500 || this.props.translateX},
-            {translateZ: -500 || this.props.translateZ},
+            {rotateY: tooltip.rotationY},
+            {rotateX: theta},
+            {translateZ: -700},
           ],
         }}
         onClick={() => this.gotoIndex(this.props.linkedPhotoId)}

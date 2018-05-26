@@ -76,6 +76,16 @@
                "attribution": "Photo by Will Shenton",
                "attributionUri": "https://commons.wikimedia.org/wiki/File:The_Young_Laddie_Cocktail.jpg",
                "linkedPhotoId":"112355"
+            },{
+               "type": "panelimage",
+               "rotationY": 110,
+               "width": 1.280,
+               "height": 1.280,
+               "source": "old-fashioned.jpg",
+               "text": "Bar open until midnight M-F and 2:00 a.m. weekends.",
+               "attribution": "Photo by Will Shenton",
+               "attributionUri": "https://commons.wikimedia.org/wiki/File:The_Young_Laddie_Cocktail.jpg",
+               "linkedPhotoId":"112355"
             },
             {
                "type": "textblock",
@@ -119,6 +129,17 @@
                "attributionUri": "https://unsplash.com/photos/JKMnm3CIncw",
                "linkedPhotoId":"112379"
                
+            }, {
+               "type": "panelimage",
+               "rotationY": 190,
+               "width": 1.280,
+               "height":0.850,
+               "source":"beer-cheers.jpg",
+               "text": "The Chester Biergarten is ideal for group dining and social gatherings. Enjoy casual picnic-table seating and views of the historic Meatpacking District.",
+               "attribution": "Photo by yutacar on upslash",
+               "attributionUri": "https://unsplash.com/photos/JKMnm3CIncw",
+               "linkedPhotoId":"112379"
+
             }
          ]
       },
@@ -154,10 +175,18 @@
                "height": 1.240,
                "source":"Three-Cocktails.webm",
                "muted":true
-            },
-            {
+            },{
                "type": "image",
                "rotationY": -53,
+               "width": 1.020,
+               "height": 1.388,
+               "source":"chalkboard-menu.jpg",
+               "attribution": "Photo by currystrumpet on flickr",
+               "attributionUri": "https://www.flickr.com/photos/currystrumpet/7895715748",
+               "linkedPhotoId":"112379"
+            },{
+               "type": "image",
+               "rotationY": 0,
                "width": 1.020,
                "height": 1.388,
                "source":"chalkboard-menu.jpg",

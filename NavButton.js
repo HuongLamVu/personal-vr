@@ -82,7 +82,7 @@ class NavButton extends React.Component {
   _selected() {
     // Disable focus once button is selected.
     this.setState({hasFocus: false});
-    this.props.onInput();
+    this.props.gotoIndex(this.props.linkedPhotoId);
   }
 
   render() {
@@ -100,9 +100,9 @@ class NavButton extends React.Component {
           layoutOrigin: [0.5, 0.5],
           position: 'absolute',
           transform: [
-            // {rotateY: 400 this.props.rotateY},
-            {translateX: 350 || this.props.translateX},
-            {translateZ: 400 || this.props.translateZ},
+            {rotateY: Math.random(0, 360)},
+            {rotateX: 25},
+            {translateZ: -700},
           ],
         }}
         ignoreLongClick={true}
