@@ -9,6 +9,7 @@ import {
   VrButton,
   StyleSheet,
   Image,
+  NativeModules,
 
 } from 'react-360';
 
@@ -29,11 +30,31 @@ const degreesToPixels = degrees => -(degrees / 360) * MAX_TEXTURE_WIDTH;
 // PPM = 1/(2*PI*Radius) * density. Radius of cylinder is 3 meters.
 const PPM = 1 / (2 * Math.PI * 3) * MAX_TEXTURE_WIDTH;
 
+const domTextboxContent = {
+  header: 'This is a DOM Overlay!',
+  description: 'A dom overlay is a 2D window that takes over the 3D world,' +
+  ' allowing for better interactivity and content consumption outside of VR. ' +
+  'DOM Overlays are implemented as Native Modules, ' +
+  'for more info on native modules, check the following links:',
+  links: [
+    {
+      text: 'Native Modules docs',
+      url: 'https://facebook.github.io/react-vr/docs/native-modules.html',
+    },
+    {
+      text: 'Native Modules Github Sample',
+      url: 'https://github.com/facebook/react-vr/tree/master/Examples/NativeModules',
+    },
+  ],
+};
+
 export default class Hello360 extends React.Component {
   static defaultProps = {
     tourSource: 'tourOfTheChester.json',
   };
-
+  constructor(){
+    super();
+  }
   state = {
     rotation: new Animated.Value(0),
     data: null,
@@ -93,8 +114,6 @@ export default class Hello360 extends React.Component {
     const locationId = this.state.locationId;
     const photoData = (locationId && this.state.data.photos[locationId]) || null;
     const tooltips = (photoData && photoData.tooltips) || null;
-    const rotation =
-      this.state.data.firstPhotoRotation + ((photoData && photoData.rotationOffset) || 0);
     const isLoading = this.state.nextLocationId !== this.state.locationId;
     const soundEffects = this.state.data.soundEffects;
     return (
@@ -170,6 +189,10 @@ export default class Hello360 extends React.Component {
             </View>
           </View>
         </View>
+        {
+          NativeModules.DomOverlayModule.openOverlay(domTextboxContent)
+
+        }
       </AnimatedView>
     );
   }
